@@ -27,6 +27,13 @@ const Header = () => {
           <Button 
             variant="ghost" 
             className="text-purple-200 hover:text-white hover:bg-purple-800/30"
+            onClick={() => navigate("/globe")}
+          >
+            <ShinyText text="Globe" speed={4} className="text-inherit" />
+          </Button>
+          <Button 
+            variant="ghost" 
+            className="text-purple-200 hover:text-white hover:bg-purple-800/30"
             onClick={() => navigate("/founder")}
           >
             <ShinyText text="About Founder" speed={4} className="text-inherit" />
