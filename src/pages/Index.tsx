@@ -7,18 +7,32 @@ import FounderSpotlight from "@/components/FounderSpotlight";
 import FeaturesSection from "@/components/FeaturesSection";
 import GlobePreview from "@/components/GlobePreview";
 import AuthSection from "@/components/AuthSection";
+import Aurora from "@/components/Aurora";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-      <FloatingElements />
-      <Header />
-      <HeroSection />
-      <StatsSection />
-      <FounderSpotlight />
-      <FeaturesSection />
-      <GlobePreview />
-      <AuthSection />
+      {/* Aurora Background */}
+      <div className="fixed inset-0 z-0">
+        <Aurora
+          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+          blend={0.8}
+          amplitude={1.2}
+          speed={0.3}
+        />
+      </div>
+      
+      {/* Content with higher z-index */}
+      <div className="relative z-10">
+        <FloatingElements />
+        <Header />
+        <HeroSection />
+        <StatsSection />
+        <FounderSpotlight />
+        <FeaturesSection />
+        <GlobePreview />
+        <AuthSection />
+      </div>
     </div>
   );
 };
