@@ -8,7 +8,7 @@ const FeaturesSection = () => {
     <section className="container mx-auto px-4 mb-16 relative z-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <PixelCard variant="blue" className="rounded-2xl">
-          <Card className="bg-slate-800/70 backdrop-blur-sm border-purple-500/40 hover:border-purple-400/60 transition-all duration-300 transform hover:scale-105 rounded-2xl">
+          <Card className="bg-transparent border-transparent hover:border-transparent transition-all duration-300 transform hover:scale-105 rounded-2xl">
             <CardContent className="p-8 text-center">
               <div className="bg-purple-600/30 rounded-full p-4 w-fit mx-auto mb-6">
                 <MapPin className="h-10 w-10 text-purple-400" />
@@ -22,7 +22,7 @@ const FeaturesSection = () => {
         </PixelCard>
 
         <PixelCard variant="pink" className="rounded-2xl">
-          <Card className="bg-slate-800/70 backdrop-blur-sm border-purple-500/40 hover:border-purple-400/60 transition-all duration-300 transform hover:scale-105 rounded-2xl">
+          <Card className="bg-transparent border-transparent hover:border-transparent transition-all duration-300 transform hover:scale-105 rounded-2xl">
             <CardContent className="p-8 text-center">
               <div className="bg-blue-600/30 rounded-full p-4 w-fit mx-auto mb-6">
                 <Users className="h-10 w-10 text-blue-400" />
@@ -36,7 +36,7 @@ const FeaturesSection = () => {
         </PixelCard>
 
         <PixelCard variant="yellow" className="rounded-2xl">
-          <Card className="bg-slate-800/70 backdrop-blur-sm border-purple-500/40 hover:border-purple-400/60 transition-all duration-300 transform hover:scale-105 rounded-2xl">
+          <Card className="bg-transparent border-transparent hover:border-transparent transition-all duration-300 transform hover:scale-105 rounded-2xl">
             <CardContent className="p-8 text-center">
               <div className="bg-green-600/30 rounded-full p-4 w-fit mx-auto mb-6">
                 <Zap className="h-10 w-10 text-green-400" />

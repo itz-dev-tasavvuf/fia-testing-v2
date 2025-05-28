@@ -8,7 +8,7 @@ const GlobePreview = () => {
   return (
     <section className="container mx-auto px-4 mb-16 relative z-10">
       <PixelCard variant="blue" className="rounded-3xl">
-        <Card className="bg-slate-800/70 backdrop-blur-sm border-purple-500/40 rounded-3xl">
+        <Card className="bg-transparent border-transparent rounded-3xl">
           <CardHeader className="text-center pb-8">
             <CardTitle className="text-white text-4xl font-bold">Our Global Community</CardTitle>
             <CardDescription className="text-purple-200 text-xl">

@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ShinyText from "@/components/ShinyText";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,14 +22,14 @@ const Header = () => {
             className="text-purple-200 hover:text-white hover:bg-purple-800/30"
             onClick={() => navigate("/discover")}
           >
-            Discover
+            <ShinyText text="Discover" speed={4} className="text-inherit" />
           </Button>
           <Button 
             variant="ghost" 
             className="text-purple-200 hover:text-white hover:bg-purple-800/30"
             onClick={() => navigate("/founder")}
           >
-            About Founder
+            <ShinyText text="About Founder" speed={4} className="text-inherit" />
           </Button>
         </div>
       </nav>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import PixelCard from "@/components/PixelCard";
+import ShinyText from "@/components/ShinyText";
 
 const FounderSpotlight = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const FounderSpotlight = () => {
   return (
     <section className="container mx-auto px-4 mb-16 relative z-10">
       <PixelCard variant="pink" className="rounded-3xl">
-        <Card className="bg-gradient-to-r from-purple-800/40 to-blue-800/40 backdrop-blur-sm border-purple-400/60 hover:scale-105 transition-transform duration-300 cursor-pointer rounded-3xl"
+        <Card className="bg-transparent border-transparent hover:scale-105 transition-transform duration-300 cursor-pointer rounded-3xl"
               onClick={() => navigate("/founder")}>
           <CardContent className="p-10">
             <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
@@ -39,7 +40,8 @@ const FounderSpotlight = () => {
                   variant="outline" 
                   className="border-purple-400 text-purple-300 hover:bg-purple-600 hover:text-white text-lg px-8 py-3"
                 >
-                  Learn More <ArrowRight className="ml-2 h-5 w-5" />
+                  <ShinyText text="Learn More" speed={3} className="text-inherit" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>

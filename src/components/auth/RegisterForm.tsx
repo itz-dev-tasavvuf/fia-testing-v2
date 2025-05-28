@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ShinyText from "@/components/ShinyText";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -132,7 +132,7 @@ const RegisterForm = () => {
             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl h-12 text-lg font-semibold"
           >
             <Star className="mr-2 h-5 w-5" />
-            Join FIA Community
+            <ShinyText text="Join FIA Community" speed={3} className="text-inherit" />
           </Button>
         </form>
       </CardContent>

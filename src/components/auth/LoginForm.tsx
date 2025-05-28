@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { mockUsers } from "@/data/mockData";
+import ShinyText from "@/components/ShinyText";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ const LoginForm = () => {
             className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl h-12 text-lg font-semibold"
           >
             <Rocket className="mr-2 h-5 w-5" />
-            Launch Into FIA
+            <ShinyText text="Launch Into FIA" speed={3} className="text-inherit" />
           </Button>
         </form>
         <p className="text-sm text-purple-300 mt-6 text-center">
