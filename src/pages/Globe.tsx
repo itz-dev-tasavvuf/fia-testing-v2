@@ -84,7 +84,7 @@ const Globe = () => {
           </div>
         </div>
 
-        <PixelCard variant="purple" className="rounded-3xl">
+        <PixelCard variant="pink" className="rounded-3xl">
           <Card className="bg-transparent border-transparent rounded-3xl">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-white text-3xl font-bold">Interactive Global Map</CardTitle>
