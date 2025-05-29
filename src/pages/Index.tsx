@@ -23,15 +23,17 @@ const Index = () => {
       </div>
       
       {/* Content with higher z-index */}
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         <FloatingElements />
         <Header />
-        <HeroSection />
-        <StatsSection />
-        <FounderSpotlight />
-        <FeaturesSection />
-        <GlobePreview />
-        <AuthSection />
+        <main className="w-full">
+          <HeroSection />
+          <StatsSection />
+          <FounderSpotlight />
+          <FeaturesSection />
+          <GlobePreview />
+          <AuthSection />
+        </main>
       </div>
     </div>
   );

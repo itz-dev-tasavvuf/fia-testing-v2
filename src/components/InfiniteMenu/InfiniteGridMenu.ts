@@ -5,12 +5,14 @@ export class InfiniteGridMenu {
   private canvas: HTMLCanvasElement;
   private items: MenuItem[] = [];
   private currentIndex = 0;
+  private lastActiveIndex = -1; // Track last active index to prevent infinite updates
   private rotationSpeed = 0.02;
   private isRotating = true;
   private onActiveItemChange: (index: number) => void;
   private onMovementChange: (isMoving: boolean) => void;
   private animationId: number | null = null;
   private ctx: CanvasRenderingContext2D | null = null;
+  private lastTime = 0;
 
   constructor(
     canvas: HTMLCanvasElement,
@@ -30,8 +32,9 @@ export class InfiniteGridMenu {
   }
 
   private init() {
-    // Set initial active item
-    if (this.items.length > 0) {
+    // Set initial active item only once
+    if (this.items.length > 0 && this.lastActiveIndex === -1) {
+      this.lastActiveIndex = 0;
       this.onActiveItemChange(0);
     }
     
@@ -54,7 +57,10 @@ export class InfiniteGridMenu {
     this.canvas.addEventListener('click', () => {
       // Cycle through items on click with smooth transition
       this.currentIndex = (this.currentIndex + 1) % this.items.length;
-      this.onActiveItemChange(this.currentIndex);
+      if (this.currentIndex !== this.lastActiveIndex) {
+        this.lastActiveIndex = this.currentIndex;
+        this.onActiveItemChange(this.currentIndex);
+      }
     });
 
     // Add touch support for mobile
@@ -76,10 +82,17 @@ export class InfiniteGridMenu {
   }
 
   private animate() {
-    if (this.isRotating) {
-      // Smooth automatic cycling through items
-      this.currentIndex = Math.floor(Date.now() / 3000) % this.items.length;
-      this.onActiveItemChange(this.currentIndex);
+    const currentTime = Date.now();
+    
+    // Only update active item every 3 seconds and only if it changed
+    if (this.isRotating && currentTime - this.lastTime > 3000) {
+      const newIndex = Math.floor(currentTime / 3000) % this.items.length;
+      if (newIndex !== this.lastActiveIndex) {
+        this.currentIndex = newIndex;
+        this.lastActiveIndex = newIndex;
+        this.onActiveItemChange(this.currentIndex);
+      }
+      this.lastTime = currentTime;
     }
     
     // Add visual effects to canvas
