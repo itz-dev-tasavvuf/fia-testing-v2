@@ -26,21 +26,21 @@ const Header = () => {
             className="text-purple-200 hover:text-white hover:bg-purple-800/30"
             onClick={() => navigate("/discover")}
           >
-            <ShinyText text="Discover" speed={4} />
+            <ShinyText text="Discover" speed={3} />
           </Button>
           <Button 
             variant="ghost" 
             className="text-purple-200 hover:text-white hover:bg-purple-800/30"
             onClick={() => navigate("/globe")}
           >
-            <ShinyText text="Globe" speed={4} />
+            <ShinyText text="Globe" speed={3} />
           </Button>
           <Button 
             variant="ghost" 
             className="text-purple-200 hover:text-white hover:bg-purple-800/30"
             onClick={() => navigate("/founder")}
           >
-            <ShinyText text="About Founder" speed={4} />
+            <ShinyText text="About Founder" speed={3} />
           </Button>
         </div>
 
@@ -65,7 +65,7 @@ const Header = () => {
                   setIsMenuOpen(false);
                 }}
               >
-                <ShinyText text="Discover" speed={4} />
+                <ShinyText text="Discover" speed={3} />
               </Button>
               <Button 
                 variant="ghost" 
@@ -75,7 +75,7 @@ const Header = () => {
                   setIsMenuOpen(false);
                 }}
               >
-                <ShinyText text="Globe" speed={4} />
+                <ShinyText text="Globe" speed={3} />
               </Button>
               <Button 
                 variant="ghost" 
@@ -85,7 +85,7 @@ const Header = () => {
                   setIsMenuOpen(false);
                 }}
               >
-                <ShinyText text="About Founder" speed={4} />
+                <ShinyText text="About Founder" speed={3} />
               </Button>
             </div>
           </div>

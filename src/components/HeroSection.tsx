@@ -20,15 +20,42 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 mb-12 md:mb-16 px-4">
           <Badge className="bg-purple-600/90 text-white px-4 md:px-6 py-2 md:py-3 text-lg md:text-xl font-semibold rounded-full backdrop-blur-sm">
             <Globe className="mr-2 md:mr-3 h-5 md:h-6 w-5 md:w-6" />
-            Global Network
+            <span className="text-inherit bg-clip-text inline-block animate-shine" style={{
+              backgroundImage: 'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
+              backgroundSize: '200% 100%',
+              WebkitBackgroundClip: 'text',
+              animationDuration: '3s',
+              animationIterationCount: 'infinite',
+              animationTimingFunction: 'linear'
+            }}>
+              Global Network
+            </span>
           </Badge>
           <Badge className="bg-blue-600/90 text-white px-4 md:px-6 py-2 md:py-3 text-lg md:text-xl font-semibold rounded-full backdrop-blur-sm">
             <Users className="mr-2 md:mr-3 h-5 md:h-6 w-5 md:w-6" />
-            Space Community
+            <span className="text-inherit bg-clip-text inline-block animate-shine" style={{
+              backgroundImage: 'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
+              backgroundSize: '200% 100%',
+              WebkitBackgroundClip: 'text',
+              animationDuration: '3s',
+              animationIterationCount: 'infinite',
+              animationTimingFunction: 'linear'
+            }}>
+              Space Community
+            </span>
           </Badge>
           <Badge className="bg-green-600/90 text-white px-4 md:px-6 py-2 md:py-3 text-lg md:text-xl font-semibold rounded-full backdrop-blur-sm">
             <Rocket className="mr-2 md:mr-3 h-5 md:h-6 w-5 md:w-6" />
-            Future Ready
+            <span className="text-inherit bg-clip-text inline-block animate-shine" style={{
+              backgroundImage: 'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
+              backgroundSize: '200% 100%',
+              WebkitBackgroundClip: 'text',
+              animationDuration: '3s',
+              animationIterationCount: 'infinite',
+              animationTimingFunction: 'linear'
+            }}>
+              Future Ready
+            </span>
           </Badge>
         </div>
       </div>
