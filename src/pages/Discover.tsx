@@ -38,6 +38,10 @@ const Discover = () => {
     return matchesSearch && matchesInterest;
   });
 
+  const handleUserClick = (userId: number) => {
+    navigate(`/profile/${userId}`);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="container mx-auto px-4 py-8">
@@ -100,11 +104,11 @@ const Discover = () => {
             <CardHeader>
               <CardTitle className="text-white">Global Community Map</CardTitle>
               <CardDescription className="text-purple-200">
-                Explore where space enthusiasts are located around the world
+                Explore where space enthusiasts are located around the world (click on points to view profiles)
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="w-full h-[80vh]">
+              <div className="w-full" style={{ height: 'calc(100vh - 300px)' }}>
                 <SpaceGlobe users={filteredUsers} fullscreen={true} />
               </div>
             </CardContent>
@@ -114,7 +118,11 @@ const Discover = () => {
         {viewMode === "grid" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredUsers.map((user) => (
-              <Card key={user.id} className="bg-slate-800/50 border-purple-500/30 hover:border-purple-400 transition-colors">
+              <Card 
+                key={user.id} 
+                className="bg-slate-800/50 border-purple-500/30 hover:border-purple-400 transition-colors cursor-pointer transform hover:scale-105 duration-200"
+                onClick={() => handleUserClick(user.id)}
+              >
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <div>
@@ -138,7 +146,7 @@ const Discover = () => {
                     <div>
                       <h4 className="text-purple-200 text-sm font-medium mb-2">Interests</h4>
                       <div className="flex flex-wrap gap-1">
-                        {user.interests.map((interest) => (
+                        {user.interests.slice(0, 3).map((interest) => (
                           <Badge 
                             key={interest} 
                             variant="secondary" 
@@ -153,7 +161,7 @@ const Discover = () => {
                     <div>
                       <h4 className="text-purple-200 text-sm font-medium mb-2">Achievements</h4>
                       <div className="space-y-1">
-                        {user.achievements.map((achievement, index) => (
+                        {user.achievements.slice(0, 2).map((achievement, index) => (
                           <p key={index} className="text-purple-300 text-xs">• {achievement}</p>
                         ))}
                       </div>
@@ -163,8 +171,12 @@ const Discover = () => {
                       variant="outline" 
                       size="sm" 
                       className="w-full border-purple-500 text-purple-200 hover:bg-purple-700"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleUserClick(user.id);
+                      }}
                     >
-                      Connect
+                      View Profile
                     </Button>
                   </div>
                 </CardContent>

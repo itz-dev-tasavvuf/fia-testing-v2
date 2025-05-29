@@ -11,7 +11,7 @@ interface ShinyTextProps {
 const ShinyText: React.FC<ShinyTextProps> = ({ 
   text, 
   disabled = false, 
-  speed = 5, 
+  speed = 3, 
   className = '' 
 }) => {
   if (disabled) {
@@ -20,17 +20,26 @@ const ShinyText: React.FC<ShinyTextProps> = ({
 
   return (
     <span
-      className={`text-inherit bg-clip-text inline-block animate-shine ${className}`}
+      className={`inline-block bg-gradient-to-r from-current via-white to-current bg-clip-text text-transparent animate-shine ${className}`}
       style={{
-        backgroundImage: 'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
-        backgroundSize: '200% 100%',
-        WebkitBackgroundClip: 'text',
-        animationDuration: `${speed}s`,
-        animationIterationCount: 'infinite',
-        animationTimingFunction: 'linear'
+        backgroundSize: '200% auto',
+        animation: `shine ${speed}s ease-in-out infinite`,
       }}
     >
       {text}
+      <style jsx>{`
+        @keyframes shine {
+          0% {
+            background-position: -200% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
+        }
+        .animate-shine {
+          animation: shine ${speed}s ease-in-out infinite;
+        }
+      `}</style>
     </span>
   );
 };
