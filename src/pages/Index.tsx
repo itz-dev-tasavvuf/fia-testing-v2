@@ -12,13 +12,13 @@ import Aurora from "@/components/Aurora";
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-      {/* Aurora Background */}
-      <div className="fixed inset-0 z-0">
+      {/* Aurora Background - optimized */}
+      <div className="fixed inset-0 z-0 opacity-80">
         <Aurora
           colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.8}
-          amplitude={1.2}
-          speed={0.3}
+          blend={0.6}
+          amplitude={0.8}
+          speed={0.2}
         />
       </div>
       
